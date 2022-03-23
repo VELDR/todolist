@@ -9,7 +9,7 @@ router.post("/add/todo", async (req, res) => {
 
   try {
     await newTodo.save();
-    console.log("Successfully added todo!");
+    console.log("Todo added");
     res.redirect("/");
   } catch (err) {
     console.log(err);
@@ -20,7 +20,7 @@ router.get("/delete/todo/:_id", async (req, res) => {
   const { _id } = req.params;
   try {
     await Todo.deleteOne({ _id });
-    console.log("Deleted Todo Successfully!");
+    console.log("Todo deleted");
     res.redirect("/");
   } catch (err) {
     console.log(err);

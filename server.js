@@ -18,7 +18,7 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 
 // routes
-app.use(require("./routes/index"));
+app.use(require("./routes/mainRouter"));
 app.use(require("./routes/todo"));
 
 // server configurations....
