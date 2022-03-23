@@ -1,0 +1,195 @@
+html {
+  font-size: 20px;
+}
+
+body {
+  font-family: "Comfortaa", cursive;
+  background-color: #292e29;
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+  font-size: 2rem;
+}
+
+.input-container {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.text-input {
+  padding: 10px;
+}
+
+.main-input {
+  font-size: 0.8rem;
+}
+
+.add-btn {
+  border: 2px solid #63891a;
+  right: 0;
+  position: absolute;
+  background-color: #272a1f;
+  cursor: pointer;
+  padding: 20px;
+}
+
+.add-btn:hover {
+  background-color: #1b1620;
+  color: white;
+}
+
+/*plus symbol by drawing a vertical and horizontal line*/
+.add-btn::after {
+  content: "";
+  position: absolute;
+  border-color: #63891a;
+  border-style: solid;
+}
+
+.add-btn::before {
+  content: "";
+  position: absolute;
+  border-color: #63891a;
+  border-style: solid;
+}
+
+.main-btn::after {
+  border-width: 0 0 2px 0;
+  width: 20px;
+  top: 19px;
+  right: 10px;
+}
+
+.main-btn::before {
+  border-width: 0 2px 0 0;
+  height: 20px;
+  right: 19px;
+  top: 10px;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  background: #fff;
+  cursor: pointer;
+}
+
+ul li:hover {
+  background: #ddd;
+}
+
+#todo-list {
+  position: relative;
+  margin-top: 90px;
+  padding: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+#todo-list li {
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  font-size: 0.8rem;
+  overflow: hidden;
+}
+
+/*hyphen on left*/
+#todo-list li::before {
+  content: "";
+  position: absolute;
+  border-color: #6d6d6d;
+  border-style: solid;
+  border-width: 1px;
+  top: 21px;
+  left: 16px;
+  width: 7px;
+}
+
+/*strikethrough text after check*/
+#todo-list li.checked {
+  background: #888;
+  color: #fff;
+  text-decoration: line-through;
+}
+
+#todo-list li.checked:hover {
+  background: rgb(114, 114, 114);
+}
+
+/*check mark on left*/
+#todo-list li.checked::before {
+  content: "";
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 13px;
+  left: 18px;
+  transform: rotate(45deg);
+  height: 12px;
+  width: 5px;
+}
+
+.del-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 21px;
+  background-color: #272a1f;
+}
+
+.del-btn:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+.del-btn:active {
+  background-color: #fd6b61;
+}
+
+.del-btn::after {
+  content: " ";
+  position: absolute;
+  border-color: #63891a;
+  border-style: solid;
+  border-width: 0 0 2px 0;
+  width: 20px;
+  top: 20px;
+  right: 11px;
+  transform: rotate(45deg);
+}
+.del-btn::before {
+  content: " ";
+  position: absolute;
+  border-color: #63891a;
+  border-style: solid;
+  border-width: 0 2px 0 0;
+  height: 20px;
+  right: 20px;
+  top: 11px;
+  transform: rotate(45deg);
+}
+
+@media (min-width: 600px) {
+  .main-input {
+    width: 45vw;
+  }
+
+  #todo-list {
+    width: 60%; /*672px;*/
+  }
+}
+
+@media (max-width: 600px) {
+  .main-input {
+    width: 90vw;
+  }
+
+  #todo-list {
+    width: 100%; /*672px;*/
+  }
+}

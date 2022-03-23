@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>To-do List</title>
+  </head>
+  <body>
+    <h1>To-do List</h1>
+    <div class="input-container">
+      <form action="/add/todo" method="post">
+        <input
+          type="text"
+          name="todo"
+          id="list-input"
+          class="text-input main-input"
+          placeholder="What to do..."
+          maxlength="50"
+        />
+        <button class="add-btn main-btn" type="submit"></button>
+      </form>
+    </div>
+
+    <ul id="todo-list">
+      <% todo.forEach(todos => { %>
+      <li class="list">
+        <%= todos.todo %>
+        <a href="/delete/todo/<%= todos._id %>"
+          ><span class="del-btn"></span
+        ></a>
+      </li>
+      <% }); %>
+    </ul>
+    <script>
+      const newList = document.getElementsByClassName("list");
+
+      for (let i = 0; i < newList.length; i++) {
+        newList[i].addEventListener("click", () => {
+          newList[i].classList.toggle("checked");
+        });
+      }
+    </script>
+  </body>
+</html>
